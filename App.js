@@ -1,10 +1,20 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View, Image } from "react-native";
+import ImageContainer from "./components/ImageContainer";
+import ButtonContainer from "./components/ButtonContainer";
+
+const BackImg = require("./assets/normal.png");
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>웹앱을 띄워봤습니다</Text>
+      <View style={styles.imageContainer}>
+        <ImageContainer BackImg={BackImg} />
+      </View>
+      <View style={styles.footContainer}>
+        <ButtonContainer theme={"primary"} label={"test"} />
+        <ButtonContainer label={"test2"} />
+      </View>
       <StatusBar style="auto" />
     </View>
   );
@@ -13,8 +23,15 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "skyblue",
     alignItems: "center",
-    justifyContent: "center",
+  },
+  imageContainer: {
+    flex: 1,
+    paddingTop: 100,
+  },
+  footContainer: {
+    flex: 1 / 3,
+    alignItems: "center",
   },
 });
