@@ -1,7 +1,8 @@
 import { Image, StyleSheet } from "react-native";
 
-export default function ImageContainer({ BackImg }) {
-  return <Image source={BackImg} style={styles.image} />;
+export default function ImageContainer({ BackImg, selectedImage }) {
+  const image = selectedImage ? { uri: selectedImage } : BackImg;
+  return <Image source={image} style={styles.image} />;
 }
 
 const styles = StyleSheet.create({
